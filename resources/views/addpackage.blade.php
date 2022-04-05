@@ -13,7 +13,6 @@
         <h1 class="text-blue-900 text-3xl font-extrabold text-center py-2">
             Add New Package
         </h1>
-
             
 
 {{-- Apply Form --}}
@@ -53,8 +52,8 @@
 
                     <div class="flex md:flex-row flex-col w-full justify-between">
                         <div class="flex flex-col w-full px-4">
-                            <label class="text-xl mt-2 md:mt-3 text-blue-900 font-extrabold">Discount (%)</label>
-                        <input class="mb-2 px-3 py-2 border rounded-lg" type="text" name='discount(%)' value="{{old('discount(%)')}}" placeholder="discount(%)">
+                            <label class="text-xl mt-2 md:mt-3 text-blue-900 font-extrabold">Discount (RM)</label>
+                        <input class="mb-2 px-3 py-2 border rounded-lg" type="text" name='discount' value="{{old('discount')}}" placeholder="discount">
                         
                         </div>
                         <div class="flex flex-col w-full px-4">

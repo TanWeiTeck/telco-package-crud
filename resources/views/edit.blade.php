@@ -19,15 +19,17 @@
 
 {{-- Apply Form --}}
         
-            <form action="/addpackage/" method="POST" class="flex flex-col justify-center p-4">
+            <form action="/edit" method="POST" class="flex flex-col justify-center p-4">
                 @csrf
-                
+
+                <input hidden name="id" value="{{$data->id}}"> 
+
                 <div class="flex space-x-4">
                     <div class="flex flex-col w-full">
                     <div class="flex md:flex-row flex-col w-full justify-between">
                         <div class="flex flex-col w-full px-4">
                             <label class="text-xl mt-2 md:mt-3 text-blue-900 font-extrabold">Service Provider</label>
-                            <select class="px-3 py-2 border rounded-lg" type="text" name="service_provider">
+                            <select class="px-3 py-2 border rounded-lg" type="text" name="service_provider" >
                                 <option value="maxis">Maxis</option>
                                 <option value="unifi">Unifi</option>
                                 <option value="time">Time</option>
@@ -35,7 +37,7 @@
                         </div>
                         <div class="flex flex-col w-full px-4">
                             <label class="text-xl mt-2 md:mt-3 text-blue-900 font-extrabold">Package ID</label>
-                            <input class="mb-2 px-3 py-2 border rounded-lg" type="text" name='package_id' placeholder="eg:(mx300149)">
+                            <input class="mb-2 px-3 py-2 border rounded-lg" type="text" name='package_id' placeholder="eg:(mx300149)" value="{{$data['package_id']}}">
 
                         </div>
                     </div>
@@ -43,30 +45,30 @@
                     <div class="flex md:flex-row flex-col w-full justify-between">
                         <div class="flex flex-col w-full px-4">
                             <label class="text-xl mt-2 md:mt-3 text-blue-900 font-extrabold">Internet Speed</label>
-                            <input class="mb-2 px-3 py-2 border rounded-lg" type="text" name='internet_speed' placeholder="internet speed">
+                            <input class="mb-2 px-3 py-2 border rounded-lg" type="text" name='internet_speed' placeholder="internet speed" value="{{$data['internet_speed']}}">
                             
                         </div>
                         <div class="flex flex-col w-full px-4">
                             <label class="text-xl mt-2 md:mt-3 text-blue-900 font-extrabold">Price (RM)</label>
-                            <input class="mb-2 px-3 py-2 border rounded-lg" type="text" name='price' placeholder="price">
+                            <input class="mb-2 px-3 py-2 border rounded-lg" type="text" name='price' placeholder="price" value="{{$data['price']}}">
                         </div>
                     </div>
 
 
                     <div class="flex md:flex-row flex-col w-full justify-between">
                         <div class="flex flex-col w-full px-4">
-                            <label class="text-xl mt-2 md:mt-3 text-blue-900 font-extrabold">Discount (%)</label>
-                        <input class="mb-2 px-3 py-2 border rounded-lg" type="text" name='discount(%)' placeholder="discount(%)">
+                            <label class="text-xl mt-2 md:mt-3 text-blue-900 font-extrabold">Discount (RM)</label>
+                        <input class="mb-2 px-3 py-2 border rounded-lg" type="text" name='discount' placeholder="discount" value="{{$data['discount']}}">
                         
                         </div>
                         <div class="flex flex-col w-full px-4">
                             <label class="text-xl mt-2 md:mt-3 text-blue-900 font-extrabold">Discounted Price (RM)</label>
-                        <input class="mb-2 px-3 py-2 border rounded-lg" type="text" name='discounted_price' placeholder="discounted price">
+                        <input class="mb-2 px-3 py-2 border rounded-lg" type="text" name='discounted_price' placeholder="discounted price" value="{{$data['discounted_price']}}">
                         </div>
                     </div>
                         <div class="flex flex-col w-full px-4">
                             <label class="text-xl mt-2 md:mt-3 text-blue-900 font-extrabold">Description</label>
-                            <input class="mb-2 px-3 py-2 border rounded-lg" type="text" name='description' placeholder="description">
+                            <input class="mb-2 px-3 py-2 border rounded-lg" type="text" name='description' placeholder="description" value="{{$data['description']}}">
                         </div>
                     </div>
                 </div>

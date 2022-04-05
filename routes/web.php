@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TelcoController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ApplicationListController;
 
 
 /*
@@ -31,11 +32,14 @@ Route::get('/admin',function () {
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
-    Route::get('/dashboard',[AdminController::class, 'index'])->name('dashboard');
-
-    Route::get('/addpackage',[AdminController::class, 'add']);
+    Route::get('/packagelist',[AdminController::class, 'index'])->name('packagelist');
+    Route::get('/applicationlist',[ApplicationListController::class, 'index'])->name('applicationlist');
+    
+    Route::get('/addpackage',[AdminController::class, 'add'])->name('addpackage');
     Route::post('/addpackage',[AdminController::class, 'create']);
+    
+    Route::get('/edit/{id}',[AdminController::class, 'edit']);
+    Route::post('/edit',[AdminController::class, 'update']);
 
-    Route::get('/addpackage/{package_id}',[AdminController::class, 'edit']);
-    Route::post('/addpackage/{package_id}',[AdminController::class, 'update']);
+    Route::get('delete/{id}',[AdminController::class, 'delete']);
 });

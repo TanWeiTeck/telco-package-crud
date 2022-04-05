@@ -31,13 +31,13 @@ class TelcoController extends Controller
             'email'  => 'required',
             'location'  => 'required',
             'contact' => ['required', 'unique:applications'],
-            'package' => 'required',
+            'package_id' => '',
             'message' => ''
         ]);
 
         $receiverEmailAddress = ['tanweiteck.twt@gmail.com'];
 
-        Mail::to($receiverEmailAddress)->send(new NewApplication);
+        // Mail::to($receiverEmailAddress)->send(new NewApplication);
 
         Application::create($request->all());
         return back()->with('success', 'Congratulations ! ! !  Your application has been submitted.');

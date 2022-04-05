@@ -1,12 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Package List') }}
         </h2>
     </x-slot>
-
     
-
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -38,7 +36,7 @@
                                       Price(RM)
                                     </th>
                                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                      Discount(%)
+                                      Discount(RM)
                                     </th>
                                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                       Discounted Price(RM)
@@ -62,7 +60,7 @@
                                         {{$package['price']}}
                                     </td>
                                     <td class="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
-                                        {{$package['discount(%)']}}
+                                        {{$package['discount']}}
                                     </td>
                                     <td class="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
                                         {{$package['discounted_price']}}
@@ -71,12 +69,15 @@
                                         {{$package['description']}}
                                     </td>
                                     <td class="text-sm text-gray-900 font-light px-6 pr-1 py-2 ">
-                                        <a href="/addpackage/{{$package->package_id}}" name="edit">
+                                        <a href="{{"edit/".$package['id']}}" name="edit">
                                             <button  class="bg-green-500 hover:bg-green-800 hover:text-gray-100 py-1 px-4 rounded-lg font-bold ">Edit</button>
                                         </a>
                                     </td>
                                     <td class="text-sm text-gray-900 font-light px-1 py-4 whitespace-nowrap">
-                                        <button class="bg-red-400 hover:bg-red-800 hover:text-gray-100 py-1 px-3 rounded-lg font-bold">Delete</button>
+                                        <a href="{{"delete/".$package['id']}}" name="delete">
+
+                                            <button class="bg-red-400 hover:bg-red-800 hover:text-gray-100 py-1 px-3 rounded-lg font-bold">Delete</button>
+                                        </a>
                                     </td>
                                   </tr>
                                   @endforeach
@@ -91,5 +92,6 @@
                 </div>
                 </div>
                 </div>
+
 
 </x-app-layout>

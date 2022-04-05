@@ -4,17 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Telco_Package;
-use App\Models\Application;
 
 class AdminController extends Controller
 {
-    //
-
 
 
 public function index(){
     $Telco_Package = Telco_Package::all();
-    return view('dashboard', ['TelcoPackage' => $Telco_Package]); 
+    return view('packagelist', ['TelcoPackage' => $Telco_Package]); 
 }
 
 public function add()
@@ -30,20 +27,26 @@ public function create(Request $request) {
         'internet_speed'  => 'required',
         'description' => 'required',
         'price' => ['required', 'integer'],
-        'discount(%)' => 'required',
+        'discount' => 'required',
         'discounted_price' => ['required', 'integer']
     ]);
 
     Telco_Package::create($request->all());
-    return redirect('dashboard');
+    return redirect('packagelist');
 }
 
+public function delete($id)
+    {
+        Telco_Package::find($id)->delete();
+        return redirect('packagelist');
+    }
 
 
-
-public function edit(Telco_Package $Telco_Package)
+public function edit($id)
 {
-        return view('edit');
+        
+        $data = Telco_package::find($id);
+        return view('edit', ['data' => $data]);
 }
 
 
@@ -51,11 +54,6 @@ public function edit(Telco_Package $Telco_Package)
 
 public function update(Request $request, Telco_Package $Telco_Package)
 {
-    if(isset($_POST['delete'])) {
-        $Telco_Package->delete();
-        return redirect('/dashboard');
-    }
-    else
     {
         $this->validate($request, [
         'service_provider' => 'required',
@@ -63,19 +61,22 @@ public function update(Request $request, Telco_Package $Telco_Package)
         'internet_speed'  => 'required',
         'description' => 'required',
         'price' => ['required', 'integer'],
-        'discount(%)' => 'required',
+        'discount' => 'required',
         'discounted_price' => ['required', 'integer']
     ]);
 
-        $Telco_Package->service_provider = $request->service_provider;
-        $Telco_Package->package_id = $request->package_id;
-        $Telco_Package->internet_speed = $request->internet_speed;
-        $Telco_Package->description = $request->description;
-        $Telco_Package->price = $request->price;
-        $Telco_Package->discounted_price = $request->discounted_price;
+        $data=Telco_Package::find($request->id);
+        $data->service_provider = $request->service_provider;
+        $data->package_id = $request->package_id;
+        $data->internet_speed = $request->internet_speed;
+        $data->description = $request->description;
+        $data->price = $request->price;
+        $data->discount = $request->discount;
+        $data->discounted_price = $request->discounted_price;
 
-        $Telco_Package->save();
-        return redirect('/dashboard'); 
+        $data->save();
+        return redirect('packagelist'); 
     }    	
 }
+
 }

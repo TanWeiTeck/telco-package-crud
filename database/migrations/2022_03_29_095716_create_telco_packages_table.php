@@ -14,12 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('telco_packages', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('service_provider');
             $table->string('package_id');
             $table->string('internet_speed');
             $table->string('description');
             $table->integer('price');
-            $table->integer('discount(%)');
+            $table->integer('discount');
             $table->integer('discounted_price');
             $table->timestamps();
         });
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('telco_plans');
+        Schema::dropIfExists('telco_packages');
     }
 };

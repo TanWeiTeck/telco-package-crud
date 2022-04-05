@@ -14,7 +14,7 @@ class Telco_Package extends Model
             'internet_speed', 
             'description',
             'price', 
-            'discount(%)', 
+            'discount', 
             'discounted_price' 
     ];
     use HasFactory;

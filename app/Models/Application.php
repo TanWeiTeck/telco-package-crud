@@ -13,7 +13,7 @@ class Application extends Model
             'email',
             'location',
             'contact',
-            'package',
+            'package_id',
             'message'
         ];
     use HasFactory;

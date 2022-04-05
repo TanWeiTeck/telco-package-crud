@@ -53,9 +53,9 @@
                 <div class="flex space-x-4">
                     <div class="flex flex-col w-full">
                         <label class="text-xl mt-4 text-blue-900 font-extrabold">MaxisONE Home Fibre Package (required)*</label>
-                        <select class="px-3 py-2 border rounded-lg" type="text" name="package">
+                        <select class="px-3 py-2 border rounded-lg" type="text" name="package_id">
                             @foreach ($TelcoPackage as $package)
-                        <option value="{{$package['package_id']}}">Maxis Home Fibre {{$package['internet_speed']}} - RM{{$package['price']}}</option>
+                                <option value="{{$package['package_id']}}">Maxis Home Fibre {{$package['internet_speed']}} - RM{{$package['price']}}</option>
                             @endforeach
                         {{-- <option value="--">--</option>
                         <option value="mx030089">Maxis Home Fibre 30 Mbps - RM89</option>
@@ -74,7 +74,7 @@
                 </div>
                 {{-- error message --}}
                 @if ($errors->any())
-                <div class="alert alert-danger">
+                <div class="alert alert-danger text-sm text-red-600">
                     <ul>
                         @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>

@@ -31,7 +31,7 @@
             @if (Route::has('login'))
             <div class="text-blue-900 font-extrabold">
                 @auth
-                <a href="{{ url('/dashboard') }}" class="border-gray-800 px-2 py-3 hover:text-[#40c706]">Dashboard</a>
+                <a href="{{ url('/packagelist') }}" class="border-gray-800 px-2 py-3 hover:text-[#40c706]">Dashboard</a>
                 @else
                 <a href="{{ route('login') }}" class="border-gray-800 px-2 py-3 hover:text-[#40c706]">Log in</a>
                 
