@@ -23,9 +23,9 @@
             {{-- header --}}
                 @include('partials/header')
             {{-- end header --}}
-            
+
             {{-- hero --}}
-            
+
             {{-- end hero --}}
 
             {{-- services --}}
@@ -202,11 +202,11 @@
                         <div class="flex justify-between items-center">
                             <h1><span class="text-xl font-extrabold">RM {{$package['price']}}</span>/month</h1>
                             <a href="{{url('/apply')}}">
-                                <button 
+                                <button
                                 class="bg-[#40c706] rounded-full px-7 py-2 text-white hover:text-black hover:bg-blue-400 hover:scale-105 duration-300 font-extrabold"
                                 >Apply Now</button>
                             </a>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -214,7 +214,7 @@
             </div>
             {{--end maxis fibre plans --}}
 
-            
+
             {{-- benefits --}}
             <div class="bg-gray-100">
                 <h1 class="p-3 text-blue-900 text-3xl font-extrabold text-center py-4">
@@ -251,7 +251,7 @@
                         </div>
                     </div>
                     <!-- end card 1 -->
-        
+
                     <!-- card 2 -->
                     <div
                         class="p-3 flex flex-col space-y-3 items-center lg:flex-row lg:justify-around"
@@ -273,7 +273,7 @@
                         </div>
                     </div>
                     <!-- end card 2 -->
-        
+
                     <!-- card 3 -->
                     <div
                         class="p-3 flex flex-col space-y-3 items-center lg:flex-row lg:justify-around"
@@ -295,7 +295,7 @@
                         </div>
                     </div>
                     <!-- end card 3 -->
-        
+
                     <!-- card 4 -->
                     <div
                         class="p-3 flex flex-col space-y-3 items-center lg:flex-row lg:justify-around"
@@ -317,11 +317,11 @@
                         </div>
                     </div>
                     <!-- end card 4 -->
-        
+
                 </div>
             </div>
             {{-- end benefits --}}
-    
+
             {{-- check coverage form --}}
             <div id="coverage" class=" p-4">
                 <h1 class="text-blue-900 text-3xl font-extrabold text-center py-4">
@@ -329,7 +329,7 @@
                 </h1>
                 <form action="/apply" method="POST" class="flex flex-col justify-center">
                 @csrf
-                
+
                 <select class="hidden" type="text" name="package">
                     <option value="CheckCoverage">-</option>
                 </select>
@@ -359,7 +359,7 @@
             {{-- End Check Coverage Form --}}
 
             <div class="fixed bottom-0 right-0 m-2 sm:m-5">
-                <a href="https://wa.me/+60165216995">
+                <a href="https://wa.me/+60129289129">
                     <img src="https://img.icons8.com/ios/50/26e07f/whatsapp--v1.png"/>
                 </a>
             </div>
@@ -367,7 +367,7 @@
             @include('partials/footer')
             </div>
         </div>
-                
+
         <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 </html>
