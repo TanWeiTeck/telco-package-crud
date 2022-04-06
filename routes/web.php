@@ -17,8 +17,8 @@ use App\Http\Controllers\ApplicationListController;
 |
 */
 
-Route::get('/home', [TelcoController::class,'index']);
-Route::get('/apply', [TelcoController::class, 'apply']);
+Route::get('/home', [TelcoController::class,'index'])->name('home');
+Route::get('/apply', [TelcoController::class, 'apply'])->name('apply');
 Route::post('/apply', [TelcoController::class, 'store']);
 Route::get('/admin',function () {
     return view('admindashboard');

@@ -45,7 +45,41 @@
             <div class="lg:hidden">
                     <maxissidemenu></maxissidemenu>
             </div>
-    </div>
 
+        </div>
+        
+        @if(Route::is('home') )
+        
+            <div class="relative min-h-[10rem] tracking-tighter z-0">
+                <img class="object-cover min-h-[10rem]"
+                    src="https://www.maxis-fibreinternet.com.my/wp-content/uploads/2021/10/banner-450-edited-latest.png"
+                    alt="bannerfibre"
+                />
+                <div class="absolute top-4 md:top-10 max-w-xs p-4 origin-top-left sm:scale-125 md:scale-150">
+                    <h1 class="text-xl xl:text-3xl font-extrabold">
+                        The next-gen Wifi 6 certified router is here
+                    </h1>
+                    <p class="text-xs">
+                        Bring home the greatest home upgrade for you and your family.
+                    </p>
+                </div>
+            </div>
+        
+        @endif
 
-    
+        @if(Route::is('apply') )
+        <div class="relative min-h-[10rem] bg-yellow-300 tracking-tighter">
+            <img
+                class="object-fill w-screen max-h-[20rem]"
+                src="https://assignmentwritinghelp-65.webself.net/file/si444887/writing-background-cover-letter-writing-service-background-fi7123716.jpg"
+                alt="bannerapply"
+            />
+
+        
+            <h1 class="absolute top-0 bg-black/25 min-w-full min-h-full flex items-center justify-center text-3xl text-white font-extrabold sm:text-4xl lg:text-6xl">
+                    Apply Now
+            </h1>
+            
+        </div>
+
+        @endif

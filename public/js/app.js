@@ -31279,7 +31279,7 @@ var render = function () {
               "div",
               {
                 staticClass:
-                  "flex flex-col h-screen bg-black/90 text-gray-300 w-96 font-extrabold",
+                  "flex flex-col h-screen bg-black bg-opacity-70 text-gray-300 w-96 font-extrabold",
               },
               [
                 _c(
@@ -31287,7 +31287,7 @@ var render = function () {
                   {
                     staticClass:
                       "border-t border-gray-800 px-3 py-3 hover:text-white",
-                    attrs: { href: "#" },
+                    attrs: { href: "/home" },
                   },
                   [_vm._v("HOME")]
                 ),

@@ -23,11 +23,11 @@
             class="w-screen h-screen bg-gray-400/50 z-10 fixed left-0 top-0"
         >
             <div
-                class="flex flex-col h-screen bg-black/90 text-gray-300 w-96 font-extrabold"
+                class="flex flex-col h-screen bg-black bg-opacity-70 text-gray-300 w-96 font-extrabold"
             >
                 <a
                     class="border-t border-gray-800 px-3 py-3 hover:text-white"
-                    href="#"
+                    href="/home"
                     >HOME</a
                 >
                 <a

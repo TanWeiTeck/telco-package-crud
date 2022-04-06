@@ -37,7 +37,7 @@ class TelcoController extends Controller
 
         $receiverEmailAddress = ['tanweiteck.twt@gmail.com'];
 
-        // Mail::to($receiverEmailAddress)->send(new NewApplication);
+        Mail::to($receiverEmailAddress)->send(new NewApplication);
 
         Application::create($request->all());
         return back()->with('success', 'Congratulations ! ! !  Your application has been submitted.');

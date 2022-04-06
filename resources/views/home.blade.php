@@ -21,24 +21,11 @@
     <body class="max-w-screen overflow-y-auto flex justify-center m-auto">
         <div id="app" class="max-w-screen-2xl">
             {{-- header --}}
-            @include('partials/header')
+                @include('partials/header')
             {{-- end header --}}
-
+            
             {{-- hero --}}
-            <div class="relative min-h-[10rem] tracking-tighter z-0">
-                <img class="object-cover min-h-[10rem]"
-                    src="https://www.maxis-fibreinternet.com.my/wp-content/uploads/2021/10/banner-450-edited-latest.png"
-                    alt="bannerfibre"
-                />
-                <div class="absolute top-4 md:top-10 max-w-xs p-4 origin-top-left sm:scale-125 md:scale-150">
-                    <h1 class="text-xl xl:text-3xl font-extrabold">
-                        The next-gen Wifi 6 certified router is here
-                    </h1>
-                    <p class="text-xs">
-                        Bring home the greatest home upgrade for you and your family.
-                    </p>
-                </div>
-            </div>
+            
             {{-- end hero --}}
 
             {{-- services --}}
