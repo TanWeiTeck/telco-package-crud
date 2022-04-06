@@ -17,7 +17,7 @@ use App\Http\Controllers\ApplicationListController;
 |
 */
 
-Route::get('/home', [TelcoController::class,'index'])->name('home');
+Route::get('', [TelcoController::class,'index'])->name('home');
 Route::get('/apply', [TelcoController::class, 'apply'])->name('apply');
 Route::post('/apply', [TelcoController::class, 'store']);
 Route::get('/admin',function () {
@@ -34,10 +34,10 @@ Route::get('/admin',function () {
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/packagelist',[AdminController::class, 'index'])->name('packagelist');
     Route::get('/applicationlist',[ApplicationListController::class, 'index'])->name('applicationlist');
-    
+
     Route::get('/addpackage',[AdminController::class, 'add'])->name('addpackage');
     Route::post('/addpackage',[AdminController::class, 'create']);
-    
+
     Route::get('/addapplication',[ApplicationListController::class, 'add'])->name('addapplication');
     Route::post('/addapplication',[ApplicationListController::class, 'create']);
 
