@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string("contact");
             $table->string("package_id");
             $table->string("message")->nullable();
+            $table->string("remark")->nullable();
             $table->timestamps();
         });
     }

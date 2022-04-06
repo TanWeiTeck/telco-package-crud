@@ -14,7 +14,8 @@ class Application extends Model
             'location',
             'contact',
             'package_id',
-            'message'
+            'message',
+            'remark'
         ];
     use HasFactory;
 }

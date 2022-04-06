@@ -23,7 +23,7 @@ public function create(Request $request) {
     //Validatetion
     $this->validate($request,[
         'service_provider' => 'required',
-        'package_id'  => ['required'],
+        'package_id'  => ['required', 'unique:telco_packages'],
         'internet_speed'  => 'required',
         'description' => 'required',
         'price' => ['required', 'integer'],
@@ -57,7 +57,7 @@ public function update(Request $request, Telco_Package $Telco_Package)
     {
         $this->validate($request, [
         'service_provider' => 'required',
-        'package_id'  => ['required'],
+        'package_id'  => ['required' ],
         'internet_speed'  => 'required',
         'description' => 'required',
         'price' => ['required', 'integer'],

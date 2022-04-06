@@ -1,10 +1,13 @@
 
     <div class="flex items-center justify-between p-4 h-20 md:h-24">
-            <img
-                class="h-full bg-yellow-400 object-contain"
+            <a class="h-full object-contain" href="{{ url("/home") }}">
+                <img
+                class="h-full object-contain"
                 src="https://www.maxis-fibreinternet.com.my/wp-content/uploads/2021/10/maxis_logo-1.jpg"
                 alt="maxislogo"
-            />
+            /></a>
+
+            
             <div
                 class="text-blue-900 font-extrabold hidden lg:block">
                 <a class="border-gray-800 px-2 py-3 hover:text-[#40c706] {{ (request()->is('home')) ? 'text-[#40c706]' : 'nothing' }} " href="{{ url("/home") }}"

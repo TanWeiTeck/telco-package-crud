@@ -1,17 +1,10 @@
-require("./bootstrap");
-
-import Alpine from "alpinejs";
-
-window.Alpine = Alpine;
-
-Alpine.start();
-
-import { Vue } from "vue";
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+
+require("./bootstrap");
 
 window.Vue = require("vue").default;
 
@@ -30,18 +23,8 @@ Vue.component(
     "example-component",
     require("./components/ExampleComponent.vue").default
 );
-
-Vue.component("maxisheader", require("./components/Header.vue").default);
-Vue.component(
-    "maxisheaderapply",
-    require("./components/Headerapply.vue").default
-);
-Vue.component("maxismenu", require("./components/Menu.vue").default);
-Vue.component("maxisservice", require("./components/Service.vue").default);
-Vue.component("maxispros", require("./components/Pros.vue").default);
-Vue.component("maxisfibre", require("./components/Fibreplan.vue").default);
-Vue.component("maxispros2", require("./components/Pros2.vue").default);
-Vue.component("maxisfooter", require("./components/Footer.vue").default);
+Vue.component("btn", require("./components/btn.vue").default);
+Vue.component("maxissidemenu", require("./components/SideMenu.vue").default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -52,3 +35,9 @@ Vue.component("maxisfooter", require("./components/Footer.vue").default);
 const app = new Vue({
     el: "#app",
 });
+
+import Alpine from "alpinejs";
+
+window.Alpine = Alpine;
+
+Alpine.start();

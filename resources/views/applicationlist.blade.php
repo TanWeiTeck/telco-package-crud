@@ -12,7 +12,7 @@
                 <div class="flex flex-col">
                     <div class="flex justify-between">
                         <div class="flex-auto text-2xl mb-4 ">Application List</div>
-                        <a class="hover:text-blue-700" href="{{url('/addpackage')}}">+ Add New Application</a>
+                        <a class="hover:text-blue-700" href="{{url('/addapplication')}}">+ Add New Application</a>
                         
                     </div>
 
@@ -24,7 +24,7 @@
                                 <thead class="border-b">
                                   <tr>
                                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                      ID
+                                      Created/Updated At
                                     </th>
                                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                       Name
@@ -33,10 +33,10 @@
                                       Email
                                     </th>
                                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                      Location
+                                      Contact
                                     </th>
                                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                      Contact
+                                      Location
                                     </th>
                                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                       Package ID
@@ -44,12 +44,15 @@
                                     <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                       Message
                                     </th>
+                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                      Remarks
+                                    </th>
                                   </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($Application as $application)
+                                    @foreach ($Application->reverse() as $application)
                                   <tr class="border-b">
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{$application['id']}}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{$application['updated_at']}}</td>
                                     <td class="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
                                         {{$application['name']}}
                                     </td>
@@ -57,24 +60,27 @@
                                         {{$application['email']}}
                                     </td>
                                     <td class="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
-                                        {{$application['location']}}
+                                        {{$application['contact']}}
                                     </td>
                                     <td class="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
-                                        {{$application['contact']}}
+                                        {{$application['location']}}
                                     </td>
                                     <td class="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
                                         {{$application['package_id']}}
                                     </td>
-                                    <td class="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
+                                    <td class="text-sm text-gray-900 font-light px-6 py-2 min-w-[20rem] h-10 overflow-y-hidden break-words">
                                         {{$application['message']}}
                                     </td>
+                                    <td class="text-sm text-gray-900 font-light px-6 py-2 whitespace-nowrap">
+                                      {{$application['remark']}}
+                                    </td>
                                     <td class="text-sm text-gray-900 font-light px-6 pr-1 py-2 ">
-                                        <a href="{{"edit/".$application['id']}}" name="edit">
-                                            <button  class="bg-green-500 hover:bg-green-800 hover:text-gray-100 py-1 px-4 rounded-lg font-bold ">Edit</button>
+                                        <a href="{{"addremark/".$application['id']}}" name="edit">
+                                            <button  class="bg-green-500 hover:bg-green-800 hover:text-gray-100 py-1 px-4 rounded-lg font-bold ">Add Remarks</button>
                                         </a>
                                     </td>
                                     <td class="text-sm text-gray-900 font-light px-1 py-4 whitespace-nowrap">
-                                        <a href="{{"delete/".$application['id']}}" name="delete">
+                                        <a href="{{"deleteapplication/".$application['id']}}" name="delete">
 
                                             <button class="bg-red-400 hover:bg-red-800 hover:text-gray-100 py-1 px-3 rounded-lg font-bold">Delete</button>
                                         </a>

@@ -31,7 +31,7 @@ class TelcoController extends Controller
             'email'  => 'required',
             'location'  => 'required',
             'contact' => ['required', 'unique:applications'],
-            'package_id' => '',
+            'package_id' => 'required',
             'message' => ''
         ]);
 

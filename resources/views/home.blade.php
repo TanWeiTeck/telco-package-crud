@@ -362,7 +362,7 @@
                 </div>
                 <div class="flex flex-col">
                     <label class="text-xl mt-4 text-blue-900 font-extrabold">Message</label>
-                    <textarea class="px-3 py-2 h-[150px] w-full border rounded-lg" name='message' placeholder="message">Message here..</textarea>
+                    <textarea class="px-3 py-2 h-[150px] w-full border rounded-lg" name='message' placeholder="message"></textarea>
                 </div>
                 <button
                 class="bg-[#40c706] rounded-md mt-3 px-7 py-2 text-white hover:text-black hover:bg-blue-400 hover:scale-95 duration-300 font-extrabold"

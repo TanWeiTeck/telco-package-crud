@@ -38,8 +38,19 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/addpackage',[AdminController::class, 'add'])->name('addpackage');
     Route::post('/addpackage',[AdminController::class, 'create']);
     
+    Route::get('/addapplication',[ApplicationListController::class, 'add'])->name('addapplication');
+    Route::post('/addapplication',[ApplicationListController::class, 'create']);
+
     Route::get('/edit/{id}',[AdminController::class, 'edit']);
     Route::post('/edit',[AdminController::class, 'update']);
 
-    Route::get('delete/{id}',[AdminController::class, 'delete']);
+    Route::get('/addremark/{id}',[ApplicationListController::class, 'edit']);
+    Route::post('/addremark',[ApplicationListController::class, 'update']);
+
+
+
+    Route::get('deletepackage/{id}',[AdminController::class, 'delete']);
+    Route::get('deleteapplication/{id}',[ApplicationListController::class, 'delete']);
 });
+
+

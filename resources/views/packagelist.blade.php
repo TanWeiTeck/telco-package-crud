@@ -74,7 +74,7 @@
                                         </a>
                                     </td>
                                     <td class="text-sm text-gray-900 font-light px-1 py-4 whitespace-nowrap">
-                                        <a href="{{"delete/".$package['id']}}" name="delete">
+                                        <a href="{{"deletepackage/".$package['id']}}" name="delete">
 
                                             <button class="bg-red-400 hover:bg-red-800 hover:text-gray-100 py-1 px-3 rounded-lg font-bold">Delete</button>
                                         </a>
